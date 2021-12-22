@@ -46,3 +46,21 @@ mysql> describe addressbook;
 | email        | varchar(100) | NO   |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 8 rows in set (0.08 sec)
+
+
+mysql> insert into addressbook(first_name,last_name,address,city,state,zip,phone_number,email)
+    -> values('sandy','verma','new shivpuri','ludhiana','punjab','141414','7777777777','abc@gmail.com'),
+    -> ('sonu','kumar','bypass','ferozpur','punjab','12456','7894561236','asd@gmail.com'),
+    -> ('jiya','arora','adresh nagar','delhi','up','222222','9517368425','xyz@gmail.com');
+Query OK, 3 rows affected (0.32 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | address      | city     | state  | zip    | phone_number | email         |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | new shivpuri | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
+| sonu       | kumar     | bypass       | ferozpur | punjab | 12456  | 7894561236   | asd@gmail.com |
+| jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+3 rows in set (0.07 sec)
