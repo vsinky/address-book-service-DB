@@ -1,0 +1,18 @@
+mysql> create database addressbook_service;
+Query OK, 1 row affected (0.18 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| bank                |
+| bridgelabzdemo      |
+| information_schema  |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| pet                 |
+| sys                 |
++---------------------+
+9 rows in set (0.07 sec)
