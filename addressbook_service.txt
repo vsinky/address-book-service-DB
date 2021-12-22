@@ -98,3 +98,13 @@ mysql> select * from addressbook where city = 'ludhiana' or state = 'punjab';
 | sandy      | verma     | london  | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
 +------------+-----------+---------+----------+--------+--------+--------------+---------------+
 1 row in set (0.00 sec)
+
+
+mysql> select city, state ,count(*) from addressbook group by city;
++----------+--------+----------+
+| city     | state  | count(*) |
++----------+--------+----------+
+| ludhiana | punjab |        1 |
+| delhi    | up     |        1 |
++----------+--------+----------+
+2 rows in set (0.07 sec)
