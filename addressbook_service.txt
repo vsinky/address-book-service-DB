@@ -64,3 +64,17 @@ mysql> select * from addressbook;
 | jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
 +------------+-----------+--------------+----------+--------+--------+--------------+---------------+
 3 rows in set (0.07 sec)
+
+mysql> update addressbook set address = 'london' where first_name = 'sandy';
+Query OK, 1 row affected (0.19 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | address      | city     | state  | zip    | phone_number | email         |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | london       | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
+| sonu       | kumar     | bypass       | ferozpur | punjab | 12456  | 7894561236   | asd@gmail.com |
+| jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+3 rows in set (0.06 sec)
