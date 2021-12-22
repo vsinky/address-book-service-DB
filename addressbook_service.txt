@@ -108,3 +108,12 @@ mysql> select city, state ,count(*) from addressbook group by city;
 | delhi    | up     |        1 |
 +----------+--------+----------+
 2 rows in set (0.07 sec)
+
+
+mysql> select * from addressbook where city = 'delhi' order by first_name,last_name asc;
++------------+-----------+--------------+-------+-------+--------+--------------+---------------+
+| first_name | last_name | address      | city  | state | zip    | phone_number | email         |
++------------+-----------+--------------+-------+-------+--------+--------------+---------------+
+| jiya       | arora     | adresh nagar | delhi | up    | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+--------------+-------+-------+--------+--------------+---------------+
+1 row in set (0.00 sec)
