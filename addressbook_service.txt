@@ -90,3 +90,11 @@ mysql> select * from addressbook;
 | jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
 +------------+-----------+--------------+----------+--------+--------+--------------+---------------+
 2 rows in set (0.05 sec)
+
+mysql> select * from addressbook where city = 'ludhiana' or state = 'punjab';
++------------+-----------+---------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | address | city     | state  | zip    | phone_number | email         |
++------------+-----------+---------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | london  | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
++------------+-----------+---------+----------+--------+--------+--------------+---------------+
+1 row in set (0.00 sec)
