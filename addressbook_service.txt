@@ -78,3 +78,15 @@ mysql> select * from addressbook;
 | jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
 +------------+-----------+--------------+----------+--------+--------+--------------+---------------+
 3 rows in set (0.06 sec)
+
+mysql> delete from addressbook where last_name ='kumar';
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from addressbook;
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | address      | city     | state  | zip    | phone_number | email         |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | london       | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
+| jiya       | arora     | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+--------------+----------+--------+--------+--------------+---------------+
+2 rows in set (0.05 sec)
