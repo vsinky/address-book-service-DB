@@ -198,3 +198,11 @@ mysql> select * from addressbook;
 | anurag     | kumar     | friend       | sector-22    | noida    | up     | 111111 | 9965478444   | fghydm@gmail.com |
 +------------+-----------+--------------+--------------+----------+--------+--------+--------------+------------------+
 6 rows in set (0.00 sec)
+
+mysql> select type, count(*) from addressbook where type = "friend";
++--------+----------+
+| type   | count(*) |
++--------+----------+
+| friend |        3 |
++--------+----------+
+1 row in set (0.07 sec)
