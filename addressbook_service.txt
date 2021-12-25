@@ -117,3 +117,84 @@ mysql> select * from addressbook where city = 'delhi' order by first_name,last_n
 | jiya       | arora     | adresh nagar | delhi | up    | 222222 | 9517368425   | xyz@gmail.com |
 +------------+-----------+--------------+-------+-------+--------+--------------+---------------+
 1 row in set (0.00 sec)
+
+mysql> alter table addressbook add name varchar(40) after last_name,
+    -> add type varchar(25) after name;
+Query OK, 0 rows affected (3.27 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe addressbook;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| first_name   | varchar(20)  | NO   |     | NULL    |       |
+| last_name    | varchar(20)  | NO   |     | NULL    |       |
+| name         | varchar(40)  | YES  |     | NULL    |       |
+| type         | varchar(25)  | YES  |     | NULL    |       |
+| address      | varchar(100) | NO   |     | NULL    |       |
+| city         | varchar(25)  | NO   |     | NULL    |       |
+| state        | varchar(25)  | NO   |     | NULL    |       |
+| zip          | varchar(10)  | NO   |     | NULL    |       |
+| phone_number | varchar(20)  | NO   | PRI | NULL    |       |
+| email        | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+10 rows in set (0.07 sec)
+
+mysql> select * from addressbook;
++------------+-----------+------+------+--------------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | name | type | address      | city     | state  | zip    | phone_number | email         |
++------------+-----------+------+------+--------------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | NULL | NULL | london       | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
+| jiya       | arora     | NULL | NULL | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+------+------+--------------+----------+--------+--------+--------------+---------------+
+2 rows in set (0.00 sec)
+
+mysql> update addressbook set type='family' where first_name= 'sandy';
+Query OK, 1 row affected (0.16 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++------------+-----------+------+--------+--------------+----------+--------+--------+--------------+---------------+
+| first_name | last_name | name | type   | address      | city     | state  | zip    | phone_number | email         |
++------------+-----------+------+--------+--------------+----------+--------+--------+--------------+---------------+
+| sandy      | verma     | NULL | family | london       | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com |
+| jiya       | arora     | NULL | NULL   | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com |
++------------+-----------+------+--------+--------------+----------+--------+--------+--------------+---------------+
+2 rows in set (0.05 sec)
+
+mysql> alter table addressbook DROP name;
+Query OK, 0 rows affected (2.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update addressbook set type='friend' where first_name= 'jiya';
+Query OK, 1 row affected (0.17 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> insert into addressbook(first_name,last_name,type,address,city,state,zip,phone_number,email)values
+    -> ('sonu','kumar','family','shivpuri','ludhiana','pnj','147852','2222222222','qwe@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into addressbook(first_name,last_name,type,address,city,state,zip,phone_number,email)values
+    -> ('navpreet','kaur','friend','new','rk','uk','147811','2365478911','pklm@gmail.com');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into addressbook(first_name,last_name,type,address,city,state,zip,phone_number,email)values
+    -> ('sohani','sinha','profissional','sarai','patna','bihar','147111','2365478444','asdm@gmail.com');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into addressbook(first_name,last_name,type,address,city,state,zip,phone_number,email)values
+    -> ('anurag','kumar','friend','sector-22','noida','up','111111','9965478444','fghydm@gmail.com');
+Query OK, 1 row affected (0.22 sec)
+
+mysql> select * from addressbook;
++------------+-----------+--------------+--------------+----------+--------+--------+--------------+------------------+
+| first_name | last_name | type         | address      | city     | state  | zip    | phone_number | email            |
++------------+-----------+--------------+--------------+----------+--------+--------+--------------+------------------+
+| sonu       | kumar     | family       | shivpuri     | ludhiana | pnj    | 147852 | 2222222222   | qwe@gmail.com    |
+| sohani     | sinha     | profissional | sarai        | patna    | bihar  | 147111 | 2365478444   | asdm@gmail.com   |
+| navpreet   | kaur      | friend       | new          | rk       | uk     | 147811 | 2365478911   | pklm@gmail.com   |
+| sandy      | verma     | family       | london       | ludhiana | punjab | 141414 | 7777777777   | abc@gmail.com    |
+| jiya       | arora     | friend       | adresh nagar | delhi    | up     | 222222 | 9517368425   | xyz@gmail.com    |
+| anurag     | kumar     | friend       | sector-22    | noida    | up     | 111111 | 9965478444   | fghydm@gmail.com |
++------------+-----------+--------------+--------------+----------+--------+--------+--------------+------------------+
+6 rows in set (0.00 sec)
